@@ -37,6 +37,16 @@
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-reflect
+        @statisticallyfit ADDED-->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.specs</groupId>
             <artifactId>specs</artifactId>
@@ -83,6 +93,10 @@
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version> <!--  @statisticallyfit ADDED
+                TODO: how to use the scala.version env variable here? Shows up in red, not working?
+                TODO: the compile warning says all packages need version 2.12.12 (same version as scala but there is
+                no such version number for the maven-scala-plugin so how to satisfy that warning? -->
                 <executions>
                     <execution>
                         <goals>
@@ -101,6 +115,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.10</version> <!-- MY CHANGE HERE -->
                 <configuration>
                     <downloadSources>true</downloadSources>
                     <buildcommands>
@@ -122,6 +137,7 @@
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version> <!-- @statisticallyfit ADDED -->
                 <configuration>
                     <scalaVersion>${scala.version}</scalaVersion>
                 </configuration>

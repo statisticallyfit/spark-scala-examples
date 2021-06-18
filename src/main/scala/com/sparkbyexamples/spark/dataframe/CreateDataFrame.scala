@@ -44,7 +44,9 @@ object CreateDataFrame {
       .map(attributes => Row(attributes._1, attributes._2))
     var dfFromData3 = spark.createDataFrame(rowData,schema)
 
+
     //From Data (USING createDataFrame and Adding bean class)
     //To-DO
   }
 }
+
